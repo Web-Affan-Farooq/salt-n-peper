@@ -1,0 +1,75 @@
+.btn {
+    border: 1px solid white;
+    color: white;
+    display: flex;
+    background-color: black;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border-radius: 30px;
+    padding: 15px;
+    font-size: 15px;
+
+    svg {
+        width: 17px;
+        height: 17px;
+    }
+}
+
+.btn-lg {
+    border: 1px solid white;
+    color: white;
+    display: flex;
+    background-color: black;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border-radius: 30px;
+    padding: 13px 15px;
+    font-size: 15px;
+    padding: 14px 50px;
+}
+
+.btn-md {
+    border: 1px solid white;
+    color: white;
+    display: flex;
+    background-color: black;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border-radius: 30px;
+    font-size: 15px;
+    letter-spacing: -1px;
+    padding: 10px 30px;
+
+    svg {
+        width: 17px;
+        height: 17px;
+    }
+}
+
+.btn-arrow {
+    background-color: white;
+    border-radius: 50%;
+    display: flex;
+    padding: 5px;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn-green {
+    border: none;
+    background-color: green;
+    letter-spacing: normal;
+
+    svg {
+        stroke: green;
+    }
+}
+
+.btn-red {
+    border: none;
+    background-color: red;
+    letter-spacing: normal;
+}

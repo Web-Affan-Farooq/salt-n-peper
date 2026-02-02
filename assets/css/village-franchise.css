@@ -1,0 +1,54 @@
+.vil-franchise {
+    padding: 50px 0;
+}
+
+.vil-franchise>.card {
+    width: 100%;
+    background-color: rgb(20, 18, 20);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px 30px;
+    gap: 30px;
+
+    .content {
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+
+        .place {
+            color: red;
+            letter-spacing: 7px;
+            padding: 0;
+            text-transform: uppercase;
+        }
+
+        .title {
+            span {
+                font-size: 36px;
+            }
+
+            margin-bottom: 20px;
+            font-size: 30px;
+            font-weight: normal;
+            font-family: var(--font-opensans);
+        }
+    }
+
+    img {
+        width: 50%;
+        object-fit: cover;
+    }
+}
+
+@media (max-width:1000px) {
+    .vil-franchise>.card {
+        flex-wrap: wrap;
+
+
+        .content {
+            width: 100%;
+        }
+    }
+}

@@ -1,0 +1,263 @@
+/* Base styles and variables */
+:root {
+    --primary-red: rgb(196, 26, 43);
+    --font-opensans: 'Open Sans', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Header styles */
+header {
+    width: 100%;
+    padding: 8px 20px;
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+.logo img {
+    width: 150px;
+    height: auto;
+    transition: width 0.3s ease;
+}
+
+/* Hamburger menu (mobile only) */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 1000;
+}
+
+.hamburger span {
+    width: 100%;
+    height: 3px;
+    background-color: white;
+    transition: all 0.3s ease;
+}
+
+/* Navigation styles */
+nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+    transition: all 0.3s ease;
+}
+
+nav a {
+    font-size: 15px;
+    font-weight: bold;
+    color: white;
+    font-family: var(--font-opensans);
+    text-decoration: none;
+    transition: color 0.3s ease;
+    white-space: nowrap;
+}
+
+nav a:hover {
+    color: var(--primary-red);
+}
+
+/* Button styles */
+.btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    border: none;
+    border-radius: 30px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: var(--font-opensans);
+    white-space: nowrap;
+}
+
+.btn-franchise {
+    width: 150px;
+    height: 50px;
+    background-color: var(--primary-red);
+    color: white;
+}
+
+.btn-order {
+    width: 150px;
+    height: 50px;
+    background-color: var(--primary-red);
+    color: white;
+    padding: 0 15px;
+}
+
+.btn-arrow svg {
+    stroke: white;
+    transition: transform 0.3s ease;
+}
+
+.btn:hover .btn-arrow svg {
+    transform: translateX(3px);
+}
+
+.btn:hover {
+    background-color: rgba(196, 26, 43, 0.9);
+    transform: translateY(-2px);
+}
+
+/* Responsive Design */
+
+/* Tablet screens (768px - 1024px) */
+@media (max-width: 1024px) {
+    nav {
+        gap: 15px;
+    }
+
+    .btn-franchise,
+    .btn-order {
+        width: 140px;
+        height: 45px;
+        font-size: 14px;
+    }
+
+    nav a {
+        font-size: 14px;
+    }
+
+    .logo img {
+        width: 130px;
+    }
+}
+
+/* Small tablets (max-width: 768px) */
+@media (max-width: 768px) {
+    header {
+        padding: 8px 15px;
+        height: 70px;
+    }
+
+    .logo img {
+        width: 120px;
+    }
+
+    .btn-franchise,
+    .btn-order {
+        width: 130px;
+        height: 42px;
+        font-size: 13px;
+    }
+
+    nav {
+        gap: 12px;
+    }
+
+    nav a {
+        font-size: 13px;
+    }
+}
+
+/* Mobile screens (max-width: 480px) */
+@media (max-width: 480px) {
+    .hamburger {
+        display: flex;
+    }
+
+    nav {
+        position: fixed;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background-color: black;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px 0;
+        gap: 20px;
+        transform: translateY(-100%);
+        opacity: 0;
+        visibility: hidden;
+        z-index: 999;
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+    }
+
+    nav.active {
+        transform: translateY(0);
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .logo img {
+        width: 110px;
+    }
+
+    header {
+        height: 70px;
+        justify-content: space-between;
+    }
+
+    .btn-franchise,
+    .btn-order {
+        width: 200px;
+        height: 45px;
+        margin: 5px 0;
+    }
+
+    nav a {
+        font-size: 16px;
+        padding: 10px 0;
+        width: 100%;
+        text-align: center;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    /* Hamburger animation when active */
+    .hamburger.active span:nth-child(1) {
+        transform: translateY(9px) rotate(45deg);
+    }
+
+    .hamburger.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.active span:nth-child(3) {
+        transform: translateY(-9px) rotate(-45deg);
+    }
+}
+
+/* Extra small screens */
+@media (max-width: 320px) {
+    header {
+        padding: 8px 10px;
+    }
+
+    .logo img {
+        width: 100px;
+    }
+
+    .btn-franchise,
+    .btn-order {
+        width: 180px;
+        font-size: 12px;
+    }
+}
+
+/* Banner styles (if needed) */
+.banner {
+    width: 100%;
+    overflow: hidden;
+}
+
+.banner img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
