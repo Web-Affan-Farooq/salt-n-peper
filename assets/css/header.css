@@ -1,16 +1,11 @@
-/* Base styles and variables */
-:root {
-    --primary-red: rgb(196, 26, 43);
-    --font-opensans: 'Open Sans', sans-serif;
-}
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
 /* Header styles */
+:root {
+    --break-xs : 320px;
+    --break-md : 320px;
+    --break-lg:1024px;
+    
+}
+
 header {
     width: 100%;
     padding: 8px 20px;
@@ -19,6 +14,13 @@ header {
     justify-content: space-between;
     align-items: center;
     position: relative;
+    background-color: red;
+}
+
+@media (min-width:1024px) {
+    header {
+        justify-content: space-evenly;
+    }
 }
 
 .logo img {
@@ -119,6 +121,10 @@ nav a:hover {
 
 /* Tablet screens (768px - 1024px) */
 @media (max-width: 1024px) {
+    header {
+        justify-content: space-between;
+    }
+
     nav {
         gap: 15px;
     }
@@ -140,10 +146,71 @@ nav a:hover {
 }
 
 /* Small tablets (max-width: 768px) */
-@media (max-width: 768px) {
-    header {
-        padding: 8px 15px;
+@media (max-width: 820px) {
+        header {
+        padding: 8px 50px;
         height: 70px;
+        justify-content: space-between;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    nav {
+        position: fixed;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background-color: black;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px 0;
+        gap: 12px;
+        transform: translateY(-100%);
+        opacity: 0;
+        visibility: hidden;
+        z-index: 999;
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+    }
+
+    nav.active {
+        transform: translateY(0);
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .logo img {
+        width: 110px;
+    }
+
+    .btn-franchise,
+    .btn-order {
+        width: 200px;
+        height: 45px;
+        margin: 5px 0;
+    }
+
+
+    nav a {
+        font-size: 13px;
+        padding: 10px 0;
+        width: 100%;
+        text-align: center;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    /* Hamburger animation when active */
+    .hamburger.active span:nth-child(1) {
+        transform: translateY(9px) rotate(45deg);
+    }
+
+    .hamburger.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.active span:nth-child(3) {
+        transform: translateY(-9px) rotate(-45deg);
     }
 
     .logo img {
@@ -157,13 +224,6 @@ nav a:hover {
         font-size: 13px;
     }
 
-    nav {
-        gap: 12px;
-    }
-
-    nav a {
-        font-size: 13px;
-    }
 }
 
 /* Mobile screens (max-width: 480px) */
@@ -234,7 +294,7 @@ nav a:hover {
 }
 
 /* Extra small screens */
-@media (max-width: 320px) {
+@media (max-width: var(--break-xs)) {
     header {
         padding: 8px 10px;
     }
