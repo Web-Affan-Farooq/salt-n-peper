@@ -1,9 +1,9 @@
 /* Header styles */
 :root {
-    --break-xs : 320px;
-    --break-md : 320px;
-    --break-lg:1024px;
-    
+    --break-xs: 400px;
+    --break-md: 820px;
+    --break-lg: 1024px;
+
 }
 
 header {
@@ -14,10 +14,9 @@ header {
     justify-content: space-between;
     align-items: center;
     position: relative;
-    background-color: red;
 }
 
-@media (min-width:1024px) {
+@media (min-width:var(--break-lg)) {
     header {
         justify-content: space-evenly;
     }
@@ -147,7 +146,7 @@ nav a:hover {
 
 /* Small tablets (max-width: 768px) */
 @media (max-width: 820px) {
-        header {
+    header {
         padding: 8px 50px;
         height: 70px;
         justify-content: space-between;
